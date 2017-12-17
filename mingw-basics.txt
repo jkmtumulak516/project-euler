@@ -1,0 +1,5 @@
+// compile source c++ code
+    g++ <name>.cpp -o <name>.exe
+
+// run .exe
+    ./<name>.exe
