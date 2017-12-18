@@ -17,6 +17,7 @@ int main()
 
     return 0;
 }
+
 ll smallestMultiple()
 {
     ll ctr = 0;
@@ -35,4 +36,10 @@ ll smallestMultiple()
         }
         ctr++;
     }
+}
+
+// alternative
+ll smallestMultiple2()
+{
+    return 11 * 13 * 14 * 17 * 18 * 19 * 20;
 }
