@@ -16,7 +16,7 @@ int main()
     ll n;
     
     cin >> n;
-    cout << sumOfAllMultiples(n);
+    cout << sumOfAllMultiples(n) << endl;
 
     return 0; 
 }
