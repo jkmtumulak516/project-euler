@@ -9,7 +9,9 @@ const ll LIMIT = 10000000;
 
 int main()
 {
+    cout << "test";
     vector< vector<ll> >* v = new vector< vector<ll> >(LIMIT, vector<ll>(0));
+
 
     for (int i = 1; i < LIMIT; i++)
     {
