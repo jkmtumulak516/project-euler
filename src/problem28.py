@@ -1,15 +1,19 @@
+if '__main__' == __name__:
 
-size = 1001
-limit = (size - 1) >> 1
-start = 1
-ctr = start
-inc = 2
-inc_growth = 2
+    n = 1
 
-for i in range(0, limit):
-    start += inc
-    ctr += start * 4 + inc * 6
-    start += inc *3
-    inc += inc_growth
+    diag_sum = 1
 
-print ctr
+    dimensions = 3
+
+    while dimensions <= 1001:
+
+        step = dimensions - 1
+
+        for i in range(4):
+            n += step
+            diag_sum += n
+
+        dimensions += 2
+
+    print(diag_sum)
