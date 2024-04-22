@@ -7,10 +7,12 @@ def is_prime(n: int) -> bool:
 
 if '__main__' == __name__:
 
-    number = int(input('Enter a large number: '))
+    number = 13195 #600851475143
 
-    for i in range(2, int(number // 2)):
-        j = number / i
-        if j % 1 == 0 and is_prime(int(j)):
-            print(j)
-            break
+    for x in range(2, number // 2):
+        if is_prime(x) and number % x == 0:
+            divisor = number // x
+            if is_prime(divisor):
+                print(divisor)
+                break
+

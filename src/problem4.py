@@ -1,30 +1,34 @@
+from collections import deque
+
 def is_palindrome(n: int) -> bool:
 
-    digits = []
+    sn = str(n)
 
-    while n > 0:
-        digits.append(n % 10)
-        n = n // 10
-
-    reversed_digits = reversed(digits)
-
-    for i, j in zip(digits, reversed_digits):
-        if i != j:
+    for i in range(len(sn) // 2):
+        j = -(i + 1)
+        if sn[i] != sn[j]:
             return False
 
     return True
 
 if '__main__' == __name__:
 
-    numbers = []
+    numbers = deque([(999, 999)])
+    largest = 0
 
-    for i in reversed(range(100, 1000)):
-        for j in reversed(range(100, i + 1)):
-            numbers.append(i * j)
+    while len(numbers) > 0:
 
-    numbers.sort(reverse=True)
+        n1, n2 = numbers.popleft()
+        product = n1 * n2
 
-    for n in numbers:
-        if is_palindrome(n):
-            print(n)
-            break
+        if is_palindrome(product):
+            if product > largest:
+                print(f'{product} = {n1} * {n2}')
+                largest = product
+
+        if n2 > 100:
+            numbers.append((n1, n2 - 1))
+        elif n1 > 100:
+            numbers.append((n1 - 1, n1 - 1))
+
+    print(f'Largest Palindrome Product: {largest}')
